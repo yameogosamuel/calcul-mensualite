@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout">
+<head>
+<meta charset="utf-8"/>
+<title>Ajouter un utilisateur</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}"/>
+	
+	<link rel="stylesheet" type="text/css" href="../static/css/all.min.css"
+	th:href="@{/css/all.min.css}"/>
+	
+	 <link rel="stylesheet" type="text/css" href="../static/css/styles.css"
+	      th:href="@{/css/styles.css}"/>
+	
+	      
+	  <script src="../static/js/jquery.min.js"  th:src="@{/js/jquery.min.js}"></script>
+      <!-- <script src="../static/js/popper.min.js"  th:src="@{/js/popper.min.js}"></script> -->
+      <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"  th:src="@{https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js}"></script>
+      <script src="../static/js/bootstrap.min.js"  th:src="@{/js/bootstrap.min.js}"></script>
+      <script src="../static/js/script.js"  th:src="@{/js/script.js}"></script> 
+      
+      
+</head>
+<body>
+	
+   <div class="p-3 mb-2 bg-white text-dark my-4 rounded spacer col-md-6 col-md-offset-3 col-xs-12 center-block">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><h2>Ajouter un utilisateur</h2></div>
+			<div class="panel-body">
+			  <form th:action="@{/addUser}" method="post">
+				<div class="row">
+					<div class="col">
+						<label class="control-label" >Nom :</label>
+						<input type="text" class="form-control" placeholder="Nom" name="lastname"
+						th:value="${user.lastname}"/>
+					</div>
+					<div class="col">
+						<label class="control-label" >Prénom :</label>
+						<input type="text" class="form-control" placeholder="Nom" name="firstname"
+						th:value="${user.firstname}"/>
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<label class="control-label" >Login :</label>
+						<input type="email" class="form-control" placeholder="Email" name="email"
+						th:value="${user.email}"/>
+					</div>
+					<div class="col">
+						<label class="control-label" >Password :</label>
+						<input type="password" class="form-control"  name="password"
+						th:value="${user.password}"/>
+					</div>
+				</div>
+				
+				
+				<div class="my-2">
+						<button type="submit" class="btn btn-primary btn-lg">Save</button>
+				</div>
+			 </form> 
+			</div>
+		</div>
+	</div>
+	
+				
+					
+  
+  <footer class="navbar-fixed-bottom">
+		<hr/>
+		<div class="container text-white">
+			<small>
+				Copyright @2019
+			</small>
+		</div>
+	</footer>
+	
+	
+</body>
+</html>

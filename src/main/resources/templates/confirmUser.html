@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout">
+<head>
+<meta charset="utf-8"/>
+<title>Confirmation d'ajout</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}"/>
+	
+	<link rel="stylesheet" type="text/css" href="../static/css/all.min.css"
+	th:href="@{/css/all.min.css}"/>
+	
+	 <link rel="stylesheet" type="text/css" href="../static/css/styles.css"
+	      th:href="@{/css/styles.css}"/>
+	
+	      
+	  <script src="../static/js/jquery.min.js"  th:src="@{/js/jquery.min.js}"></script>
+      <!-- <script src="../static/js/popper.min.js"  th:src="@{/js/popper.min.js}"></script> -->
+      <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"  th:src="@{https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js}"></script>
+      <script src="../static/js/bootstrap.min.js"  th:src="@{/js/bootstrap.min.js}"></script>
+      <script src="../static/js/script.js"  th:src="@{/js/script.js}"></script> 
+      
+      
+</head>
+<body>
+	
+   <div class="p-3 mb-2 bg-white text-dark my-4 rounded spacer col-md-6 col-md-offset-3 col-xs-12 center-block">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><h2>Confirmation d'ajout</h2></div>
+			<div class="panel-body">
+		
+				<div class="lead">
+					<div >
+						<label class="control-label " >ID :</label>
+						<label th:text="${user.id}" ></label> 
+					</div>
+					<div >
+						<label class="control-label " >Nom :</label>
+						<label th:text="${user.lastname}" ></label> 
+					</div>
+					<div >
+						<label class="control-label " >Prénom :</label>
+						<label th:text="${user.firstname}" ></label> 
+					</div>
+					
+					<div >
+						<label class="control-label" >Email :</label>
+						<label th:text="${user.email}" ></label>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		 <a  onclick="return confirm('Etes vous sûre de vouloir supprimer?')" th:href="@{/delete(id=${user.id})}"><input type="submit" class="btn btn-secondary mx-2" value="Annuler"/></a>
+		 <a href="/auth"><input type="submit" class="btn btn-danger " value="Retour"/></a>
+	</div>
+	
+				
+					
+  
+  <footer class="navbar-fixed-bottom ">
+		<hr/>
+		<div class="container text-white">
+			<small>
+				Copyright @2019
+			</small>
+		</div>
+	</footer>
+	
+	
+</body>
+</html>
